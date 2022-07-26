@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail xac nhan</title>
+<!--        <link rel="stylesheet" type="text/css" th:href="@{/static/css/mail.css}">-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
+        @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) {
+            *[class="table_width_100"] {
+                width: 96% !important;
+            }
+            *[class="border-right_mob"] {
+                border-right: 1px solid #dddddd;
+            }
+            *[class="mob_100"] {
+                width: 100% !important;
+            }
+            *[class="mob_center"] {
+                text-align: center !important;
+            }
+            *[class="mob_center_bl"] {
+                float: none !important;
+                display: block !important;
+                margin: 0px auto;
+            }
+            .iage_footer a {
+                text-decoration: none;
+                color: #929ca8;
+            }
+            img.mob_display_none {
+                width: 0px !important;
+                height: 0px !important;
+                display: none !important;
+            }
+            img.mob_width_50 {
+                width: 40% !important;
+                height: auto !important;
+            }
+        }
+        .table_width_100 {
+            width: 680px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="margin-top: 20px; text-align: center">Thông tin sản phẩm</h1><br><br>
+<div class="container">
+    <h1 style="color: red">Bạn nhận được mail là đã mua được hàng</h1>
+<!--    <table class="table" border="1">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th scope="col">Id</th>-->
+<!--            <th scope="col">Name</th>-->
+<!--            <th scope="col">Title</th>-->
+<!--            <th scope="col">Price</th>-->
+<!--            <th scope="col">Count</th>-->
+<!--            <th scope="col">Sub Total</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr th:each="rawCart, iStat:${rawCarts}">-->
+<!--            <th scope="row" th:text="${iStat.index} +1"></th>-->
+<!--            <td th:text="${rawCart.product.name}"></td>-->
+<!--            <td th:text="${rawCart.product.title}">Sony</td>-->
+<!--            <td th:text="${#numbers.formatInteger(rawCart.product.price, 3, 'POINT') + ' $'}">4000000</td>-->
+<!--            <td th:text="${rawCart.count}">1</td>-->
+<!--            <td th:text="${#numbers.formatInteger(rawCart.product.price * rawCart.count, 3, 'POINT') + ' $'}">4000000-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td colspan="3"></td>-->
+<!--            <td colspan="2">Raw Total</td>-->
+<!--            <td th:text="${#numbers.formatInteger(cart.rawTotal, 3, 'POINT')+ ' $'}">4000000</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td colspan="3"></td>-->
+<!--            <td colspan="2">Discount</td>-->
+<!--            <td th:text="${#numbers.formatInteger(-cart.discount, 3, 'POINT')+ ' $'}">4000000</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td colspan="3"></td>-->
+<!--            <td colspan="2">VAT</td>-->
+<!--            <td th:text="${#numbers.formatInteger(cart.vatTax, 3, 'POINT')+ ' $'}">4000000</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td colspan="3"></td>-->
+<!--            <td colspan="2">Final Total</td>-->
+<!--            <td th:text="${#numbers.formatInteger(cart.total, 3, 'POINT')+ ' $'}">4000000</td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+</div>
+</body>
+</html>
+
