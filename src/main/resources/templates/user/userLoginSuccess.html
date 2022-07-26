@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" th:href="@{/static/css/viewProduct.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/viewHome.css}">
     <!-- Custom fonts for this template-->
     <link th:href="@{/static/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
     <link
@@ -31,7 +31,7 @@
 <div class="container text-center">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" th:href="@{/user/home/page/1}">Product</a>
+            <a class="navbar-brand" th:href="@{/user/home/page/1}">Home</a>
             <button class="navbar-toggler" type="button" data-coreui-toggle="collapse" data-coreui-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -45,12 +45,12 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Filter Product By Category
+                            Filter Home By Category
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
 
-                            <a class="dropdown-item" th:href="@{|/user/filter/${products.getNumber()+1}?nameCategory=1|}">Phone</a>
-                            <a class="dropdown-item" th:href="@{|/user/filter/${products.getNumber()+1}?nameCategory=2|}">Laptop</a>
+                            <a class="dropdown-item" th:href="@{|/user/filter/${homes.getNumber()+1}?nameCategory=1|}">1 room</a>
+                            <a class="dropdown-item" th:href="@{|/user/filter/${homes.getNumber()+1}?nameCategory=2|}">2 room</a>
                         </div>
                     </li>
 
@@ -85,41 +85,41 @@
                         </div>
                     </li>
                 </ul>
-                <form class="d-flex" th:action="@{|/user/search/${products.getNumber()+1}|}" method="post" style="margin-right: 0">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="name-product">
+                <form class="d-flex" th:action="@{|/user/search/${homes.getNumber()+1}|}" method="post" style="margin-right: 0">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="name-home">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
 
-    <section class="section-products">
+    <section class="section-homes">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-md-8 col-lg-6">
                     <div class="header">
-                        <h3>Featured Product</h3>
-                        <h2>Popular Products</h2>
+                        <h3>Featured Home</h3>
+                        <h2>Popular Homes</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <!-- Single Product -->
-                <div class="col-md-6 col-lg-4 col-xl-3" th:each="product:${products}">
-                    <div id="product-1" class="single-product" >
-                        <div class="part-1" th:style="|background: url(@{/images/}${product.image}) no-repeat center; background-size: cover|">
+                <!-- Single home -->
+                <div class="col-md-6 col-lg-4 col-xl-3" th:each="home:${homes}">
+                    <div id="home-1" class="single-home" >
+                        <div class="part-1" th:style="|background: url(@{/images/}${home.image}) no-repeat center; background-size: cover|">
                             <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart" th:onclick="|window.location.href='/user/buy/${product.id}'|"></i></a></li>
+                                <li><a href="#"><i class="fas fa-shopping-cart" th:onclick="|window.location.href='/user/buy/${home.id}'|"></i></a></li>
                                 <li><a href="#"><i class="fas fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand" th:onclick="|window.location.href='/user/detail/${product.id}'|"></i></a></li>
+                                <li><a href="#"><i class="fas fa-expand" th:onclick="|window.location.href='/user/detail/${home.id}'|"></i></a></li>
                             </ul>
                         </div>
                         <div class="part-2">
-                            <h3 class="product-name" th:text="${product.name}">Here Product Title</h3>
-                            <h4 class="product-title" th:text="${product.description}">Here Product Title</h4>
-                            <h4 class="product-old-price" th:text="${#numbers.formatInteger(product.price + 300,3,'POINT')} + ' $'">$79.99</h4>
-                            <h4 class="product-price" th:text="${#numbers.formatInteger(product.price,3,'POINT')} + ' $'">$49.99</h4>
+                            <h3 class="home-name" th:text="${home.name}">Here Home Title</h3>
+                            <h4 class="home-title" th:text="${home.description}">Here Home Title</h4>
+                            <h4 class="home-old-price" th:text="${#numbers.formatInteger(home.price + 300,3,'POINT')} + ' $'">$79.99</h4>
+                            <h4 class="home-price" th:text="${#numbers.formatInteger(home.price,3,'POINT')} + ' $'">$49.99</h4>
                         </div>
                     </div>
                 </div>
@@ -131,15 +131,15 @@
                 <div class="col-md-8">
                     <nav aria-label="Pagination">
                         <ul class="pagination justify-content-center">
-                            <li class="page-item" th:if="${!products.isFirst()}">
-                                <a class="page-link" th:href="@{|/user/home/page/${products.getNumber()}|}">Previous</a>
+                            <li class="page-item" th:if="${!homes.isFirst()}">
+                                <a class="page-link" th:href="@{|/user/home/page/${homes.getNumber()}|}">Previous</a>
                             </li>
-                            <li th:class="|page-item ${pageIndex == products.getNumber() ? 'active' : ''}|"
-                                th:each="pageIndex : ${#numbers.sequence( 0, __${products.getTotalPages()-1}__)}"><a
+                            <li th:class="|page-item ${pageIndex == homes.getNumber() ? 'active' : ''}|"
+                                th:each="pageIndex : ${#numbers.sequence( 0, __${homes.getTotalPages()-1}__)}"><a
                                     class="page-link" th:href="|${pageIndex +1}|" th:text="${pageIndex+1}"></a></li>
 
-                            <li class="page-item" th:if="${!products.isLast()}">
-                                <a class="page-link" th:href="@{|/user/home/page/${products.getNumber()+2}|}">Next</a>
+                            <li class="page-item" th:if="${!homes.isLast()}">
+                                <a class="page-link" th:href="@{|/user/home/page/${homes.getNumber()+2}|}">Next</a>
                             </li>
                         </ul>
                     </nav>

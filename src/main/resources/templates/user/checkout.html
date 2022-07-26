@@ -27,11 +27,11 @@
         <tbody>
         <tr th:each="orderLine, iStat:${cart.orderLines}">
             <th scope="row" th:text="${iStat.index} +1"></th>
-            <td th:text="${orderLine.product.name}">Sony WXMH 1000</td>
-            <td th:text="${orderLine.product.category.name}">Sony</td>
-            <td th:text="${#numbers.formatInteger(orderLine.product.price, 3, 'POINT')}">4000000</td>
+            <td th:text="${orderLine.home.name}">Sony WXMH 1000</td>
+            <td th:text="${orderLine.home.category.name}">Sony</td>
+            <td th:text="${#numbers.formatInteger(orderLine.home.price, 3, 'POINT')}">4000000</td>
             <td th:text="${orderLine.count}">1</td>
-            <td th:text="${#numbers.formatInteger(orderLine.product.price * orderLine.count, 3, 'POINT')} + '$'">4000000</td>
+            <td th:text="${#numbers.formatInteger(orderLine.home.price * orderLine.count, 3, 'POINT')} + '$'">4000000</td>
         </tr>
         <tr>
             <td colspan="3"></td>
